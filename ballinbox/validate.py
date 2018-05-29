@@ -1,5 +1,7 @@
 import math
 
+E=1e-12
+
 def validate(circles, blockers):
     # Is circle in the box?
     for circle in circles:
@@ -37,7 +39,7 @@ def validate(circles, blockers):
                 x2 = circle2[0]
                 y2 = circle2[1]
                 r2 = circle2[2]
-                if math.sqrt((x1 - x2)**2 + (y1 - y2)**2) < (r1 + r2):
+                if math.sqrt((x1 - x2)**2 + (y1 - y2)**2)-r1-r2<E:
                     return False
     # all good
     return True

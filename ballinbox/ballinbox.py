@@ -1,5 +1,6 @@
 import math
 import random
+import matplotlib.pyplot as plt
 import ballinbox.validate as vv
 
 __all__ = ['ball_in_box']
@@ -47,18 +48,28 @@ def ball_in_box(m=5, blockers=[(0.5, 0.5), (0.5, -0.5), (0.5, 0.3)]):
                 while r<1:
                      circles[circle_index]=(x, y, r)
                      if  not vv.validate(circles,blockers):
-                         if raw_circle[0][2]<r-0.01:
-                             raw_circle[0]=(x,y,r-0.01)
+                         if raw_circle[0][2]<r-0.005:
+                             raw_circle[0]=(x,y,r-0.005)
                          break
-                     r=r+0.01
-                y=y+0.02
+                     r=r+0.005
+                y=y+0.01
                 r=0.015
-            x=x+0.02
+            x=x+0.01
             y=-0.98
         circles[circle_index]=raw_circle[0]
-        print('找到了第',circle_index,'个圆',raw_circle)
+        print('找到了第',circle_index+1,'个圆',raw_circle)
         raw_circle=[(0,0,0)]
         circle_index=circle_index+1
     area = area_sum(circles)
     print("Total area: {}".format(area))
+    fig=plt.figure()
+    ax = fig.add_subplot(111)
+    plt.xlim((-1,1))
+    plt.ylim((-1,1))
+    for i in blockers:
+        plt.scatter(i[0],i[1],s=20,edgecolors='',marker='o' )
+    for i in circles:
+        cir1=plt.Circle((i[0],i[1]),i[2],color='b',fill=False)
+        ax.add_patch(cir1)
+    plt.show()
     return circles
