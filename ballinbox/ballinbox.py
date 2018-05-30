@@ -1,7 +1,6 @@
 import math
 import random
 import matplotlib.pyplot as plt
-import ballinbox.validate as vv
 E=1e-12
 __all__ = ['ball_in_box']
 
@@ -98,11 +97,8 @@ def ball_in_box(m=5, blockers=[(0.5, 0.5), (0.5, -0.5), (0.5, 0.3)]):
         print('找到了第',circle_index+1,'个圆',raw_circle)
         raw_circle=[(0,0,0)]
         circle_index=circle_index+1
-    if vv.validate(circles,blockers):
-        area = area_sum(circles)
-        print("Total area: {}".format(area))
-    else:
-        print ("error")
+    area = area_sum(circles)
+    print("Total area: {}".format(area))
     fig=plt.figure()
     ax = fig.add_subplot(111)
     plt.xlim((-1,1))
