@@ -72,7 +72,7 @@ def ball_in_box(m=5, blockers=[(0.5, 0.5), (0.5, -0.5), (0.5, 0.3)]):
         blockers=[]
         conti=1
         while conti:
-            n=input('输入点的坐标(形式：x,y)：')
+            n=input('请输入点的坐标(形式：x,y)：')
             xlist = n.split(",")
             x=float(xlist[0])
             y=float(xlist[1])
@@ -95,7 +95,7 @@ def ball_in_box(m=5, blockers=[(0.5, 0.5), (0.5, -0.5), (0.5, 0.3)]):
             y=-0.995
         raw_circle[0] = getarround(raw_circle[0], circle_index, circles, blockers)
         circles.append(raw_circle[0])
-        print('找到了第',circle_index+1,'个圆',raw_circle)
+        print('终于找到了第',circle_index+1,'个圆',raw_circle)
         raw_circle=[(0,0,0)]
         circle_index=circle_index+1
     area = area_sum(circles)
