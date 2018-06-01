@@ -63,8 +63,7 @@ def ball_in_box(m=5, blockers=[(0.5, 0.5), (0.5, -0.5), (0.5, 0.3)]):
     
     This returns a list of tuple, composed of x,y of the circle and r of the circle.
     """
-
-    # The following is an example implementation.
+ # The following is an example implementation.
     n=int(input('请输入气球的数量（输入非正数则取默认气球数5）：'))
     if m>0:
         m=n
@@ -107,4 +106,5 @@ def ball_in_box(m=5, blockers=[(0.5, 0.5), (0.5, -0.5), (0.5, 0.3)]):
      ##for i in circles:
        ##ax.add_patch(cir1)
     #plt.show()
+   
     return circles

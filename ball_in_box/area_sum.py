@@ -23,4 +23,4 @@ if __name__ == '__main__':
 		area = area_sum(circles)
 		print("Total area: {}".format(area))
 	else:
-		print("Error: no good circles.")
+		print("Error:  no good circles.")
