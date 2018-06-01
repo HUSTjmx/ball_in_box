@@ -1,7 +1,7 @@
 import math
 
 E=1e-12
-
+__all__ = ['ball_in_box']
 def validate(circles, blockers):
     for circle1 in circles:
         for circle2 in circles:
