@@ -101,3 +101,4 @@ def ball_in_box(m=5, blockers=[(0.5, 0.5), (0.5, -0.5), (0.5, 0.3)]):
     area = area_sum(circles)
     print("Total area: {}".format(area))
     return circles
+#每组成员
