@@ -64,47 +64,5 @@ def ball_in_box(m=5, blockers=[(0.5, 0.5), (0.5, -0.5), (0.5, 0.3)]):
     This returns a list of tuple, composed of x,y of the circle and r of the circle.
     """
 
-    # The following is an example implementation.
-    n=int(input('请输入气球的数量（输入非正数则取默认气球数5）：'))
-    if m>0:
-        m=n
-    choose=int(input("是否自定应点（1：是，0：否）："))
-    if choose:
-        blockers=[]
-        conti=1
-        while conti:
-            n=input('输入点的坐标(形式：x,y)：')
-            xlist = n.split(",")
-            x=float(xlist[0])
-            y=float(xlist[1])
-            blockers.append((x,y))
-            conti=int(input("是否继续输入(1:是，0：否)："))
-    print("障碍点：",blockers)
-    circles=[]
-    circle_index=0
-    raw_circle=[(0,0,0)]
-    while circle_index<m:
-        x=-1
-        y=-1
-        while x<1:
-            while y<1:
-                r=getmin((x,y),circles,blockers)
-                if(raw_circle[0][2]<r):
-                    raw_circle[0]=(x,y,r)
-                y=y+step1
-            x=x+step1
-            y=-0.995
-        raw_circle[0] = getarround(raw_circle[0], circle_index, circles, blockers)
-        circles.append(raw_circle[0])
-        print('找到了第',circle_index+1,'个圆',raw_circle)
-        raw_circle=[(0,0,0)]
-        circle_index=circle_index+1
-    area = area_sum(circles)
-    print("Total area: {}".format(area))
-   # fig=plt.figure()
-   ###plt.ylim((-1,1))
-    #for i in blockers:
-     ##for i in circles:
-       ##ax.add_patch(cir1)
-    #plt.show()
+   
     return circles
