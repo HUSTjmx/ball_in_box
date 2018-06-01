@@ -16,26 +16,6 @@ def area_sum(circles):
 
     return area
 
-def getmin(aim,circles,blocks):
-    dis=2
-
-    for circle in circles:
-        dis2=math.sqrt((aim[0]-circle[0])**2+(aim[1]-circle[1])**2)-circle[2]
-        if dis>dis2:
-            dis=dis2
-    for block in blocks:
-        dis2 = math.sqrt((aim[0] - block[0]) ** 2 + (aim[1] - block[1]) ** 2)
-        if dis>dis2:
-            dis=dis2
-    for x in [-1,1]:
-        dis2 = math.sqrt((aim[0] - x) ** 2 )
-        if dis>dis2 :
-            dis = dis2
-    for y in [-1,1]:
-        dis2 = math.sqrt((aim[1] -y) ** 2 )
-        if dis>dis2 :
-            dis = dis2
-    return dis
 
 def getarround(raw_circle,circle_index,circles,blocks):
     x_old=raw_circle[0]
