@@ -1,5 +1,5 @@
 import math
-import ballinbox.ballinbox as bb
+import ballinbox as bb
 
 def area_sum(circles):
     area = 0.0
