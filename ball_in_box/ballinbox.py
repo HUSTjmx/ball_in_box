@@ -63,8 +63,27 @@ def ball_in_box(m=5, blockers=[(0.5, 0.5), (0.5, -0.5), (0.5, 0.3)]):
     
     This returns a list of tuple, composed of x,y of the circle and r of the circle.
     """
+<<<<<<< HEAD
 
     # The following is an example implementation.
+=======
+ # The following is an example implementation.
+    n=int(input('请输入气球的数量（输入非正数则取默认气球数5）：'))
+    if m>0:
+        m=n
+    choose=int(input("是否自定应点（1：是，0：否）："))
+    if choose:
+        blockers=[]
+        conti=1
+        while conti:
+            n=input('输入点的坐标(形式：x,y)：')
+            xlist = n.split(",")
+            x=float(xlist[0])
+            y=float(xlist[1])
+            blockers.append((x,y))
+            conti=int(input("是否继续输入(1:是，0：否)："))
+    print("障碍点：",blockers)
+>>>>>>> f84cbe3c5451b43fab0c448b9f0abc5a09b14b4f
     circles=[]
     circle_index=0
     raw_circle=[(0,0,0)]
@@ -85,4 +104,9 @@ def ball_in_box(m=5, blockers=[(0.5, 0.5), (0.5, -0.5), (0.5, 0.3)]):
         circle_index=circle_index+1
     area = area_sum(circles)
     print("Total area: {}".format(area))
+<<<<<<< HEAD
     return circles
+=======
+
+    return circles
+>>>>>>> f84cbe3c5451b43fab0c448b9f0abc5a09b14b4f
