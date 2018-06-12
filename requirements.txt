@@ -1,6 +1,0 @@
-numpy
-imageio
-matplotlib
-scipy
-scikit-image
-
